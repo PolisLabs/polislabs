@@ -3,7 +3,6 @@
 @import 'pure/pure';
 @import 'pure/grids-responsive';
 @import 'icons';
-@import 'chartist';
 
 // Utils
 @import 'variables';
@@ -11,8 +10,6 @@
 
 // Special Site Pages
 @import 'home';
-@import 'cv';
-@import 'reading';
 
 // General Layouts
 @import 'page';
@@ -31,14 +28,13 @@ html {
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: $primaryFont;
     color: $primary-color;
     font-size: 13px;
     line-height: 1.7em;
 }
 
 .document {
-    border-bottom: 3px solid $black;
 }
 
 /***************
@@ -78,7 +74,7 @@ h6,
 .h6 {
     color: $black;
     font-weight: 700;
-    font-family: "EB Garamond", serif;
+    font-family: $secondaryFont;
 }
 
 
@@ -87,7 +83,7 @@ h6,
 ******************************/
 
 .site-header {
-    font-family: "EB Garamond", serif;
+    font-family: $secondaryFont;
     padding: 0.5em;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
@@ -125,9 +121,9 @@ h6,
 
 .site-footer, .site-footer.pure-g {
     span {
-        font-family: "EB Garamond", serif;
+        font-family: $secondaryFont;
     }
-    font-family: "EB Garamond", serif;
+    font-family: $secondaryFont;
     font-size:0.90em;
     padding: 0.5em;
     text-align: center;
@@ -158,6 +154,7 @@ h6,
             vertical-align: middle;
         }
     }
+    border-bottom: 3px solid $black;
 }
 
 

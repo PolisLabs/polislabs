@@ -3,11 +3,20 @@
 **** COLORS *****
 ****************/
 $primary-color:#2c3e50;
-$black: #222;
-$red:#c0392b;
+$secondary-color:#c0392b;
 
 $bg: #fff;
+
+$black: #222;
+$red:#c0392b;
 $blue: #4ba2f8;
 $grey: #3A4145;
 $lightgrey: #ddd;
 $mediumgrey:#95a5a6;
+
+/***************
+**** Fonts *****
+****************/
+$primaryFont: 'Montserrat', sans-serif;
+$secondaryFont: 'Open Sans', sans-serif;
+$codeFont: 'Roboto Mono';

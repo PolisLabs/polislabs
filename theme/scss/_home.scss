@@ -1,101 +1,133 @@
 
-.home, .reading {
+.home {
+    .main {
+      padding-top:0;
+    }
+
+    .locate-container {
+      font-family: $secondaryFont;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: absolute;
+      border-radius: 7px;
+      background: linear-gradient(rgba(241,241,241,0.95), rgba(241,241,241,0.85));
+      top:25px;
+      font-variant: small-caps;
+      padding:5px 10px;
+      left:12px;
+      border:2px solid $red;
+      @include transition(all 0.25s ease-in-out);
+      &:hover {
+        @include transform(scale(0.95) rotate(-0.5deg));
+      }
+      #locate-button {
+        cursor: pointer;
+        .fa {
+          color:$red;
+          font-size:1.25em;
+        }
+      }
+    }
+
+    .background {
+      z-index:-1;
+      position: fixed;
+      width:100%;
+      height:100%;
+      .leaflet-control-locate a {
+        //display:none;
+      }
+      #map {
+        .leaflet-control-container{display:none;}
+        position:absolute; top:0; bottom:0; width:100%; }
+    }
 
     .page-content {
-        margin-bottom:50px;
-        .home-link {
-            font-weight:600;
-            font-size:0.9em;
-            font-family: "EB Garamond", serif;
-            text-align: center;
+          padding:0;
+      .home-header {
+        padding-top:25px;
+        .content {
+          width:125px;
+          letter-spacing: 1px;
         }
-    }
-    /* This is the class used for the main content headers (<h3>) */
-    .content-head {
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin: 1em 0 1em;
-        a {
-           padding:0.5rem;
-           border-bottom:1px solid $red;
+      }
+      height:0px;
+      overflow:visible;
+      pointer-events:none;
+      background:none !important;
+        div, * {
+          pointer-events: none;
+          a {
+            pointer-events: auto !important;
+          }
+        }
+        .has-content {
+          .content {
+            background: linear-gradient(rgba(241,241,241,0.85), rgba(241,241,241,0.75));
+            padding:5px 10px;
+            border-radius: 7px;
+          }
+        }
+
+        .home-title {
+          margin:5px;
+          display: block;
+          font-size:2.5em;
+          font-weight:400;
+          text-align: right;
+          padding:5px 15px 5px 0;
+          line-height: 1em;
+          border-right:3px solid $secondary-color;
+
+          small {
+            display: block;
+          }
         }
     }
 
-    .domain, .time {
-        color:$mediumgrey;
-        font-size:0.75em;
-        font-weight:600;
-        font-variant: small-caps;
-        display:block;
+    .home-description {
+      text-align: justify;
+      .has-content .content {
+        //margin:15px 25px 0 0;
+        padding:15px;
+        p {
+          margin:0;
+        }
+
+        .in-touch {
+          font-variant: small-caps;
+          font-family: $secondaryFont;
+          font-size:1.1em;
+          letter-spacing: 1px;
+        }
+
+        h5 {
+          margin:0.5em 0;
+        }
+
+      }
     }
 
-    .two-column {
-        .l-box {
-            //padding:0 15px;
-        }
+    .site-footer {
     }
-
-    // http://codepen.io/allizad/pen/bBsod
-    hr {
-      margin: 1em auto;
-      width:75%;
-      text-align: center;
-      line-height: 1px;
-      height: 1px;
-      background: $lightgrey;
-      border: 15px solid $bg;
-      border-left: 0;
-      border-right: 0;
-      font-size: 1.05em;
-      &:after {
-        .reading-page & {
-          content:'∞';
-          font-size: 1.15em;
+    /*
+     * -- Mobile   --
+     */
+    @media screen and (max-width: 48em) {
+        .page-content {
+          .home-title {
+            .has-content {
+              .content {
+              }
+            }
+          }
+          .home-description {
+            .has-content {
+              position: absolute;
+              bottom:20px;
+            }
+          }
         }
-        content:'JH';
-        color: $lightgrey;
-        font-family: "EB Garamond", serif;
-        display: inline;
-        background: $bg;
-        padding: .2em .3em;
-        border: 1px solid $bg;
-        border-radius: 100px;
-        transition: .3s ease all;
-      }
-      &.coffee:after {
-          content:"\e600";
-          font-family: 'icomoon';
-      }
-      &.hand:after {
-          content: "\e603";
-          font-size:1.25em;
-          font-family: 'icomoon';
-      }
-      &:before {
-        position: absolute;
-        content: '';
-        background: transparent;
-        border-spacing: 10px;
-        margin-top: -14px;
-        @include transform( scale(.5));
-        margin-left: 1px;
-        width: 29px;
-        height: 29px;
-        transition: .3s ease-out all;
-        border-radius: 100px;
-      }
-      &:not(.heart):hover {
-        &:after {
-          //border: 1px solid lighten($lightgrey,10%);
-        }
-        &:before{
-          @include transform(scale(1));
-          background: $lightgrey;
-          transition: 3s cubic-bezier(.5,-0.74,.79,1.53) all;
-          @include animation(out .3s cubic-bezier(.5,-0.74,.79,1.53) 3.2s forwards);
-        }
-      }
     }
 
     /*
@@ -103,249 +135,35 @@
      */
     @media (min-width: 48em) {
         .page-content {
-          padding:1em 0;
-        }
-    }
-
-}
-
-/*****************
-**** CHARTS *****
-****************/
-.home {
-    .charts {
-        margin:1.5em 0;
-
-    }
-
-    .coffee-table {
-        border:none;
-        margin:0 auto 2em;
-        position: relative;
-        left:-12px;
-
-        tbody {
-          position: relative;
-        }
-
-        &:hover {
-            &:before, &:after {
-                opacity:0;
+          padding:0;
+          .home-header {
+            padding:5em 0;
+            //
+            .content {
+              width:175px;
+              //margin-left:25px;
             }
-        }
+          }
+          .home-description {
+              text-align: justify;
+              padding:0;
+              .has-content .content {
+                margin:15px 25px 0 0;
 
-        &:before {
-            @include transition(all 0.35s ease-in);
-            content:'Time';
-            position:absolute;
-            left:5px;
-            display:block;
-            width:15px;
-            height:24px;
-            margin-top:-30px;
-            top:50%;
-            @include transform(rotate(-90deg));
-            font-size:0.65em;
-            color:$mediumgrey;
-            font-variant: small-caps;
-        }
-        &:after {
-            @include transition(all 0.35s ease-in);
-            content:'Days Ago';
-            position:absolute;
-            bottom:24px;
-            display:block;
-            width:46px;
-            height:15px;
-            margin-left:-10px;
-            left:50%;
-            font-size:0.65em;
-            color:$mediumgrey;
-            font-variant: small-caps;
-        }
-
-        td.coffee-cell {
-            border:3px solid $bg;
-            font-size:0;
-            line-height:0;
-            width:13px;
-            height:8px;
-            margin:0;
-            padding:0;
-            background:lighten($blue,25%);
-
-            &.has-cups {
-                //background:$red;
+              }
             }
-            &.no-data {
-                background:$lightgrey;
+          }
+            .locate-container {
+                top:5em;
+                left:12px;
+              }
+          .background {
+            .leaflet-control-locate a {
             }
-            &.no-cups {
+            #map {
+              .leaflet-control-container{display:block;}
             }
-        }
-        @media screen and (max-width: 35.5em) {
-
-            td:nth-child(2),
-            td:nth-child(3),
-            td:nth-child(4),
-            td:nth-child(5),
-            td:nth-child(6),
-            td:nth-child(7),
-            td:nth-child(8),
-            td:nth-child(9),
-            td:nth-child(10),
-            td:nth-child(11) ,
-            td:nth-child(12) ,
-            td:nth-child(13) ,
-            td:nth-child(14) ,
-            td:nth-child(15) ,
-            td:nth-child(16) {display: none;}
-        }
-
-        .x-label, .y-label {
-            opacity:0;
-            position: relative;
-            border:none;
-            span {
-                top:0;
-                position:absolute;
-                font-variant: small-caps;
-            }
-            font-size:0.65em;
-            color:$mediumgrey;
-            @include transition(all 0.65s ease-out);
-
-            &.total {
-              opacity:1;
-              line-height: 35px;
-            }
-        }
-
-        .x-label span {
-            margin-top:0px;
-            text-align: center;
-            left:0;
-            width:100%;
-        }
-
-        .y-label span{
-            top:-12px;
-            left:-7px;
-            text-align: center;
-            width:25px;
-        }
-
-        &:hover {
-            .x-label, .y-label {
-                opacity: 1;
-            }
-        }
-
-        tr.coffee-spacer td{
-          padding-top:10px;
-          opacity:0;
-          border:0;
-          background:none;
-          z-index:-1;
-          height:0;
-          width:0;
-        }
+          }
     }
 
-    @media screen and (max-width: 35.5em) {
-        .coffee-table {
-          left:-6px;
-        }
-    }
-}
-
-/* Use this selector to override bar styles on bar charts. Bars are also strokes so you have maximum freedom in styling them. */
-.ct-series-a .ct-bar {
-  /* Colour of your bars */
-  stroke: $red;
-}
-.ct-grid {
-  stroke: lighten($blue,25%);
-}
-
-.ct-chart {
-    position: relative;
-
-
-
-    .axis-label{
-        position: absolute;
-        width:100%;
-        height:100%;
-    }
-
-    [data-x-axis]:after {
-      content: attr(data-x-axis);
-      width:100%;
-      bottom:10px;
-      position: absolute;
-      text-align: center;
-        font-size:0.65em;
-        color:$mediumgrey;
-        font-variant: small-caps;
-    }
-
-    @media screen and (min-width: 35.5em) {
-        //only show y axis on bigger screens
-
-        [data-y-axis]:before {
-          content: attr(data-y-axis);
-          position: absolute;
-          left:-5px;
-          top:50%;
-          height:15px;
-          margin-top:-30px;
-          @include transform(rotate(-90deg));
-          font-size:0.65em;
-          color:$mediumgrey;
-          font-variant: small-caps;
-        }
-    }
-
-}
-
-/*****************
-**** Twitter / Articles *****
-****************/
-.two-column {
-    //margin-top:2em;
-}
-.gdoc-link {
-    a {
-        line-height:1em;
-    }
-    margin:0 0 1em;
-}
-
-
-/*****************
-**** Articles ****
-****************/
-
-.articles {
-
-    div {
-
-    }
-
-    .article-title {
-
-    }
-}
-
-
-/*****************
-**** Instagram ***
-****************/
-
-.instagram {
-    .content-head{
-        margin:1em 0 2em 0;
-    }
-    margin-bottom:2em;
 }

@@ -1,9 +1,10 @@
 
 code {
-  font-family: 'Roboto Mono';
+  font-family: $codeFont;
+  color: #343642;
 }
 .highlight {
-  font-family: 'Roboto Mono';
+  font-family: $codeFont;
   white-space: pre;
   overflow: auto;
   word-wrap: normal; /* horizontal scrolling */
