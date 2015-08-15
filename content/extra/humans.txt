@@ -1,23 +1,23 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
-    Hi Fellow Human! Thanks for stopping by and being human.
+    Hi Fellow Human! I hope you are doing well.
 
+    Polis Labs
+    @polislabs
+    github.com/polislabs
+
+    Built By:
     Joe Hand
-    joe@joeahand.com
-    @joeahand
-    github.com/joehand
+    joe@polislabs.org
 
 # TECHNOLOGY COLOPHON
 
     Pelican (Python Static Site Generator)
-    Custom Google-Docs Plugin
     PureCSS
-    Chartist.js
-    Google Fonts (Garamond and Open Sans)
-    IFTTT-Powered Data (via Google Docs)
+    Google Fonts (Montserrat and Open Sans)
 
 ## Source Code Here: 
-    github.com/joehand/joeahand
+    github.com/polislabs/polislabs
 
 # Have a good day!!

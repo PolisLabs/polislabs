@@ -13,11 +13,10 @@ from pelicanconf import *
 PUBLISH = True
 PLUGINS = [
             'assets',
-            'pelican_gdocs',
             'optimize_images'
             ]
 
-SITEURL = 'https://joeahand.com'
+SITEURL = 'https://polislabs.org'
 RELATIVE_URLS = False
 
 #FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -46,4 +45,4 @@ EXTRA_PATH_METADATA = {
 # Following items are often useful when publishing
 
 #DISQUS_SITENAME = ""
-GOOGLE_ANALYTICS = "UA-37465100-3"
+#GOOGLE_ANALYTICS = ""

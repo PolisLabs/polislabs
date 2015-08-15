@@ -1,0 +1,72 @@
+{% extends "_base.html" %}
+{%- block extra_styles -%}
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css' rel='stylesheet' />
+{%- endblock extra_styles -%}
+{%- block body_class %}home{%- endblock body_class -%}
+{% block siteheader -%}{% endblock siteheader -%}
+{%- block main %}
+    <main role="main" class="main">
+        <div class="locate-container">
+            <a id="locate-button"><i class="fa fa-map-marker"></i>
+ See where you are</a>
+        </div>
+        <div class="background">
+        <div id='map'></div>
+        </div>
+        <div class="page-content">
+            <div class="pure-g home-header">
+                <div class="pure-u-13-24 pure-u-md-3-5"></div>
+                <div class="pure-u-7-24 pure-u-md-1-5 has-content">
+                    <header class="content">
+                        <h1 class="home-title small-caps">
+                            <a href="{{ SITEURL }}/{{ page.url }}">{{page.title}}</a>
+                        </h1>
+                    </header>
+                </div>
+                <div class="pure-u-4-24 pure-u-md-1-5">
+                </div>
+            </div>
+            <div class="pure-g home-description">
+                <div class="pure-u-0 pure-u-md-0-5"></div>
+                <div class="pure-u-1-24 pure-u-md-3-5 ">
+                </div>
+                <div class="pure-u-22-24 pure-u-md-2-5 has-content">
+                    <article class="content">
+                        {{ page.content }}
+                        <h5 class="in-touch">Get in touch: <a href="mailto:{{AUTHOR_LINKS.EMAIL}}">Joe@polislabs.org</a></h5>
+                    </article>
+                </div>
+                <div class="pure-u-1-24 pure-u-md-0-5">
+                </div>
+            </div>
+        </div> <!-- .page-content  -->
+    </main>
+{% endblock main %}
+{% block sitefooter %}
+{%- endblock sitefooter %}
+
+{% block footer_scripts %}
+<script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'></script>
+<script>
+// Provide your access token
+L.mapbox.accessToken = 'pk.eyJ1Ijoiam9lYWhhbmQiLCJhIjoiaDd1MEJZQSJ9.fl3WTCt8MGNOSCGR_qqz7A';
+// Create a map in the div #map
+var map = L.mapbox.map('map', 'joeahand.n65o0c85',{ zoomControl: false });
+new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+var lc = L.control.locate({
+    //icon: '',
+    position: 'bottomleft',
+    //icon: 'fa fa-map-marker',
+    keepCurrentZoomLevel: true,
+    drawCircle: false,
+    markerClass: L.circleMarker, // L.circleMarker or L.marker
+}).addTo(map);
+document.getElementById('locate-button').onclick = function(e){
+  e.preventDefault();
+  lc.start();
+};
+</script>
+{%- endblock footer_scripts %}

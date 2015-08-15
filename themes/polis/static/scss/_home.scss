@@ -1,0 +1,169 @@
+
+.home {
+    .main {
+      padding-top:0;
+    }
+
+    .locate-container {
+      font-family: $secondaryFont;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: absolute;
+      border-radius: 7px;
+      background: linear-gradient(rgba(241,241,241,0.95), rgba(241,241,241,0.85));
+      top:25px;
+      font-variant: small-caps;
+      padding:5px 10px;
+      left:12px;
+      border:2px solid $red;
+      @include transition(all 0.25s ease-in-out);
+      &:hover {
+        @include transform(scale(0.95) rotate(-0.5deg));
+      }
+      #locate-button {
+        cursor: pointer;
+        .fa {
+          color:$red;
+          font-size:1.25em;
+        }
+      }
+    }
+
+    .background {
+      z-index:-1;
+      position: fixed;
+      width:100%;
+      height:100%;
+      .leaflet-control-locate a {
+        //display:none;
+      }
+      #map {
+        .leaflet-control-container{display:none;}
+        position:absolute; top:0; bottom:0; width:100%; }
+    }
+
+    .page-content {
+          padding:0;
+      .home-header {
+        padding-top:25px;
+        .content {
+          width:125px;
+          letter-spacing: 1px;
+        }
+      }
+      height:0px;
+      overflow:visible;
+      pointer-events:none;
+      background:none !important;
+        div, * {
+          pointer-events: none;
+          a {
+            pointer-events: auto !important;
+          }
+        }
+        .has-content {
+          .content {
+            background: linear-gradient(rgba(241,241,241,0.85), rgba(241,241,241,0.75));
+            padding:5px 10px;
+            border-radius: 7px;
+          }
+        }
+
+        .home-title {
+          margin:5px;
+          display: block;
+          font-size:2.5em;
+          font-weight:400;
+          text-align: right;
+          padding:5px 15px 5px 0;
+          line-height: 1em;
+          border-right:3px solid $secondary-color;
+
+          small {
+            display: block;
+          }
+        }
+    }
+
+    .home-description {
+      text-align: justify;
+      .has-content .content {
+        //margin:15px 25px 0 0;
+        padding:15px;
+        p {
+          margin:0;
+        }
+
+        .in-touch {
+          font-variant: small-caps;
+          font-family: $secondaryFont;
+          font-size:1.1em;
+          letter-spacing: 1px;
+        }
+
+        h5 {
+          margin:0.5em 0;
+        }
+
+      }
+    }
+
+    .site-footer {
+    }
+    /*
+     * -- Mobile   --
+     */
+    @media screen and (max-width: 48em) {
+        .page-content {
+          .home-title {
+            .has-content {
+              .content {
+              }
+            }
+          }
+          .home-description {
+            .has-content {
+              position: absolute;
+              bottom:20px;
+            }
+          }
+        }
+    }
+
+    /*
+     * -- TABLET (AND UP) MEDIA QUERIES --
+     */
+    @media (min-width: 48em) {
+        .page-content {
+          padding:0;
+          .home-header {
+            padding:5em 0;
+            //
+            .content {
+              width:175px;
+              //margin-left:25px;
+            }
+          }
+          .home-description {
+              text-align: justify;
+              padding:0;
+              .has-content .content {
+                margin:15px 25px 0 0;
+
+              }
+            }
+          }
+            .locate-container {
+                top:5em;
+                left:12px;
+              }
+          .background {
+            .leaflet-control-locate a {
+            }
+            #map {
+              .leaflet-control-container{display:block;}
+            }
+          }
+    }
+
+}
