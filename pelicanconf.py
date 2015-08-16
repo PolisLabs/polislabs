@@ -15,7 +15,7 @@ AUTHOR_LINKS = {
     'EMAIL' : '&#106;&#111;&#101;&#064;&#112;&#111;&#108;&#105;&#115;&#108;&#097;&#098;&#115;&#046;&#111;&#114;&#103;'
 }
 SITENAME = u'Polis Labs'
-SITESUBTITLE = u''
+SITESUBTITLE = u'Open Tools for The Polis'
 
 NAV_PAGES = []
 

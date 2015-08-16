@@ -5,7 +5,13 @@ body_class: home
 Template: home
 save_as: index.html
 
-Debet tollit ea qui, vel reprimique consequuntur ut. An mea diam eloquentiam. Has adhuc tibique mediocritatem ex, prompta nostrum sea ad. Nam amet propriae no, ut dicit adipisci accusamus nam, efficiendi definitiones in mea.
+**Open Tools, Local Data, Research.**
+Polis Labs aims to solve problems at a local scale & improve global understanding of cities. 
+We use open tools to empower communities with maps & data.
+We want to count number of lives improved. 
+
+
+
 
 
 
