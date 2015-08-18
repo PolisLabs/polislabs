@@ -1,4 +1,6 @@
 
+$contentBackground:linear-gradient(rgba(241,241,241,0.95), rgba(241,241,241,0.85));
+
 .home {
     .main {
       padding-top:0;
@@ -10,7 +12,7 @@
       letter-spacing: 1px;
       position: absolute;
       border-radius: 5px;
-      background: linear-gradient(rgba(241,241,241,0.95), rgba(241,241,241,0.85));
+      background:$contentBackground;
       top:25px;
       font-variant: small-caps;
       padding:5px 10px;
@@ -74,7 +76,7 @@
             line-height: 1.1em;
             margin:0;
             text-align: center;
-            color:tint($black,35%);
+            color:tint($black,25%);
           }
       }
       height:0px;
@@ -85,11 +87,12 @@
           pointer-events: none;
           a {
             pointer-events: auto !important;
+            color:$primary-color;
           }
         }
         .has-content {
           .content {
-            background: linear-gradient(rgba(241,241,241,0.85), rgba(241,241,241,0.75));
+            background: $contentBackground;
             padding:5px 10px;
             border-radius: 5px;
           }
